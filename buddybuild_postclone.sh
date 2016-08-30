@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sed -i '/<string="app_name">/d' /tmp/sandbox/workspace/app/src/main/res/values/strings.xml
+sed -i.original '/<string name="app_name">/d' tmp/sandbox/workspace/app/src/main/res/values/strings.xml
 
 #
 sed -i.original '/android {/i\
@@ -16,5 +16,5 @@ sed -i.original 's#applicationIdSuffix ".debug"#applicationIdSuffix ".$debugsuff
 
 #
 sed -i.original '/applicationIdSuffix/ a\
-resValue "string", "app_name", "JenkinsCI-$debugsuffix"\
+resValue "string", "app_name", "BuddyBuildApp-$debugsuffix"\
 ' app/build.gradle
