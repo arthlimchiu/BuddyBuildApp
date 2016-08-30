@@ -21,4 +21,4 @@ sed -i '/<string name="app_name">/d' app/src/main/res/values/strings.xml
 
 chmod +x gradlew
 
-./gradlew -Pdebugsuffix=bug50 assembleDebug
+./gradlew -Pdebugsuffix=bug50 assembleDebug installDebug
