@@ -17,4 +17,4 @@ sed -i.original '/applicationIdSuffix/ a\
 resValue "string", "app_name", "JenkinsCI-$debugsuffix"\
 ' app/build.gradle
 
-sed -i '/<string="app_name">/d' app/src/main/res/values/strings.xml
+# sed -i '/<string="app_name">/d' app/src/main/res/values/strings.xml
