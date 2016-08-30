@@ -2,7 +2,7 @@
 
 #
 sed -i.original '/android {/i\
-def debugsuffix = "$BUDDYBUILD_BRANCH"\
+def debugsuffix = System.getProperty("debugsuffix", project.getProperties().get("debugsuffix", null))\
 def final appId = "com.arthlimchiu.buddybuildapp"\
 ' app/build.gradle
 
