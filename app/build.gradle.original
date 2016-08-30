@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 def debugsuffix = System.getProperty("debugsuffix", project.getProperties().get("debugsuffix", "pokemon"))
 def final appId = "com.arthlimchiu.buddybuildapp"
 
+def debugsuffix = System.getProperty("debugsuffix", project.getProperties().get("debugsuffix", "pokemon"))
+def final appId = "com.arthlimchiu.buddybuildapp"
+
 android {
     compileSdkVersion 23
     buildToolsVersion "24.0.0"
