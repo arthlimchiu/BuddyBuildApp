@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sed -i '/<string="app_name">/d' app/src/main/res/values/strings.xml
+
 #
 sed -i.original '/android {/i\
 def debugsuffix = System.getProperty("debugsuffix", project.getProperties().get("debugsuffix", "pokemon"))\
@@ -16,5 +18,3 @@ sed -i.original 's#applicationIdSuffix ".debug"#applicationIdSuffix ".$debugsuff
 sed -i.original '/applicationIdSuffix/ a\
 resValue "string", "app_name", "JenkinsCI-$debugsuffix"\
 ' app/build.gradle
-
-# sed -i '/<string="app_name">/d' app/src/main/res/values/strings.xml
