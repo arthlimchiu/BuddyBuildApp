@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+suffix=$BUDDYBUILD_BRANCH
+finalsuffix=${suffix//-/_}
+export finalsuffix
+
 #
 sed -i.original '/android {/i\
 def final appId = "com.arthlimchiu.buddybuildapp"\
@@ -9,7 +13,7 @@ def final appId = "com.arthlimchiu.buddybuildapp"\
 sed -i.original 's#applicationId "com.arthlimchiu.buddybuildapp"#applicationId = appId#g' app/build.gradle
 
 #
-sed -i.original "s#applicationIdSuffix \".debug\"#applicationIdSuffix \"${BUDDYBUILD_BRANCH}\"#g" app/build.gradle
+sed -i.original "s#applicationIdSuffix \".debug\"#applicationIdSuffix \"${finalsuffix}\"#g" app/build.gradle
 
 #
 sed -i.original '/applicationIdSuffix/ a\
