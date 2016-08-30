@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sed -i '/<string="app_name">/d' app/src/main/res/values/strings.xml
+sed -i '/<string="app_name">/d' /tmp/sandbox/workspace/app/src/main/res/values/strings.xml
 
 #
 sed -i.original '/android {/i\
