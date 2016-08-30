@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+sed -i.original '/<string name="app_name">/d' app/src/main/res/values/strings.xml
+
 #
 sed -i.original '/android {/i\
-def debugsuffix = System.getProperty("debugsuffix", project.getProperties().get("debugsuffix", "pokemon"))\
+def debugsuffix = System.getProperty("debugsuffix", project.getProperties().get("debugsuffix", null))\
 def final appId = "com.arthlimchiu.buddybuildapp"\
 ' app/build.gradle
 
@@ -16,5 +18,3 @@ sed -i.original 's#applicationIdSuffix ".debug"#applicationIdSuffix ".$debugsuff
 sed -i.original '/applicationIdSuffix/ a\
 resValue "string", "app_name", "BuddyBuildApp-$debugsuffix"\
 ' app/build.gradle
-
-sed -i.original '/<string name="app_name">/d' app/src/main/res/values/strings.xml
