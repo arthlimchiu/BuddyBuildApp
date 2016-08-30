@@ -18,3 +18,5 @@
 # ' app/build.gradle
 
 # sed -i '/<string name="app_name">/d' app/src/main/res/values/strings.xml
+
+./gradlew -Pdebugsuffix=bug480 assembleDebug
