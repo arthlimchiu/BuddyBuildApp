@@ -18,7 +18,7 @@ sed -i.original "s#applicationIdSuffix \".debug\"#applicationIdSuffix \"${SUFFIX
 
 #
 sed -i.original '/applicationIdSuffix/ a\
-resValue "string", "app_name", "BuddyBuildApp '"${SUFFIX}"'"\
+resValue "string", "app_name", "yyy-'"${SUFFIX}"'"\
 ' app/build.gradle
 
 sed -i '/<string name="app_name">/d' app/src/main/res/values/strings.xml
