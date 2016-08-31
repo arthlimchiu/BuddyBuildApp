@@ -14,7 +14,8 @@ def final appId = "com.arthlimchiu.buddybuildapp"\
 sed -i.original 's#applicationId "com.arthlimchiu.buddybuildapp"#applicationId = appId#g' app/build.gradle
 
 #
-sed -i.original "s#applicationIdSuffix \".debug\"#applicationIdSuffix \"${SUFFIX}\"#g" app/build.gradle
+# sed -i.original "s#applicationIdSuffix \".debug\"#applicationIdSuffix \"${SUFFIX}\"#g" app/build.gradle
+sed -i.original "s#applicationIdSuffix '.debug'#applicationIdSuffix \"${SUFFIX}\"#g" app/build.gradle
 
 #
 sed -i.original '/applicationIdSuffix/ a\
